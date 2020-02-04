@@ -25,7 +25,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                sh 'npm run lint'
+                sh 'npm lint'
             }
         }
         stage('Unit Test') {
