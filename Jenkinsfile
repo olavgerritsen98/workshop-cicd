@@ -40,7 +40,7 @@ pipeline {
             }
             steps {
                 dir('code/backend'){
-                sh 'docker-compose -f docker-compose-e2e.yml up -d backend'
+                sh 'npm run test'
                 }
             }
         }
