@@ -16,7 +16,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                sh 'npm run build'     
+                sh 'docker-compose -f docker-compose.yml build     
             }
         }
         stage('Static Analysis') {
