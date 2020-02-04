@@ -8,7 +8,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
+                dir('code/backend'){
                 sh 'npm install'
+                }
             }
         }
         stage('Build') {
@@ -16,7 +18,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                sh 'npm build'
+                dir('code/backend'){
+                sh 'npm run build'
+                }
                    
             }
         }
@@ -25,7 +29,9 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
+                dir('code/backend'){
                 sh 'npm run lint'
+                }
             }
         }
         stage('Unit Test') {
