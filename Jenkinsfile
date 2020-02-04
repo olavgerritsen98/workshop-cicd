@@ -16,7 +16,7 @@ pipeline {
                 docker { image 'node:alpine' }
             }
             steps {
-                echo 'Build'
+                sh 'npm build'
                    
             }
         }
